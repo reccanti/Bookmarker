@@ -14,6 +14,7 @@
 		8467EC891DBD04EF006B921E /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EC881DBD04EF006B921E /* Bookmark.swift */; };
 		8467EC8B1DBD05C3006B921E /* BookmarkTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EC8A1DBD05C3006B921E /* BookmarkTableVC.swift */; };
 		8467EC8D1DBD0792006B921E /* BookmarkDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EC8C1DBD0792006B921E /* BookmarkDetailTableVC.swift */; };
+		B748FE041E9DD8DE003732AA /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B748FE031E9DD8DE003732AA /* AddBookmarkVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8467EC881DBD04EF006B921E /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		8467EC8A1DBD05C3006B921E /* BookmarkTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableVC.swift; sourceTree = "<group>"; };
 		8467EC8C1DBD0792006B921E /* BookmarkDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailTableVC.swift; sourceTree = "<group>"; };
+		B748FE031E9DD8DE003732AA /* AddBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				8467EC8A1DBD05C3006B921E /* BookmarkTableVC.swift */,
 				8467EC8C1DBD0792006B921E /* BookmarkDetailTableVC.swift */,
+				B748FE031E9DD8DE003732AA /* AddBookmarkVC.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				8467EC8D1DBD0792006B921E /* BookmarkDetailTableVC.swift in Sources */,
 				8467EC751DBD0487006B921E /* AppDelegate.swift in Sources */,
+				B748FE041E9DD8DE003732AA /* AddBookmarkVC.swift in Sources */,
 				8467EC891DBD04EF006B921E /* Bookmark.swift in Sources */,
 				8467EC8B1DBD05C3006B921E /* BookmarkTableVC.swift in Sources */,
 			);
@@ -323,6 +327,7 @@
 				8467EC851DBD0487006B921E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

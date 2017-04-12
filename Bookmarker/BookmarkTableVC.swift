@@ -11,6 +11,8 @@ import UIKit
 class BookmarkTableVC: UITableViewController {
     let simpleCell = "simpleCell"
     var bookmarks = [Bookmark]()
+    let myAddBookmarkSegue = "addBookmarkSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Bookmarks"
@@ -23,6 +25,8 @@ class BookmarkTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
          self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,5 +109,24 @@ class BookmarkTableVC: UITableViewController {
         }
     }
     
+    // MARK: - Actions -
+    func addItem(){
+        performSegue(withIdentifier: myAddBookmarkSegue, sender: nil)
+    }
 
+    // MARK: - Unwind Segues - 
+    @IBAction func unwindWithDoneTapped(segue: UIStoryboardSegue) {
+        print("unwindWithDoneTapped")
+        if let addBookmarkVC = segue.source as? AddBookmarkVC {
+            if let bookmark = addBookmarkVC.bookmark {
+                bookmarks.append(bookmark)
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func unwindWithCancelTapped(segue:UIStoryboardSegue) {
+        print("unwindWithCancelTapped")
+        // do nothing
+    }
 }
