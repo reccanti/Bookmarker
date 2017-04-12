@@ -15,6 +15,7 @@
 		8467EC8B1DBD05C3006B921E /* BookmarkTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EC8A1DBD05C3006B921E /* BookmarkTableVC.swift */; };
 		8467EC8D1DBD0792006B921E /* BookmarkDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EC8C1DBD0792006B921E /* BookmarkDetailTableVC.swift */; };
 		B748FE041E9DD8DE003732AA /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B748FE031E9DD8DE003732AA /* AddBookmarkVC.swift */; };
+		B748FE061E9DEB1B003732AA /* MyFileFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B748FE051E9DEB1B003732AA /* MyFileFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8467EC8A1DBD05C3006B921E /* BookmarkTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableVC.swift; sourceTree = "<group>"; };
 		8467EC8C1DBD0792006B921E /* BookmarkDetailTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailTableVC.swift; sourceTree = "<group>"; };
 		B748FE031E9DD8DE003732AA /* AddBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
+		B748FE051E9DEB1B003732AA /* MyFileFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		8467EC731DBD0487006B921E /* Bookmarker */ = {
 			isa = PBXGroup;
 			children = (
+				B748FE071E9DEB37003732AA /* Lib */,
 				8467EC741DBD0487006B921E /* AppDelegate.swift */,
 				8467EC871DBD04DB006B921E /* VC */,
 				8467EC861DBD04D0006B921E /* Model */,
@@ -87,6 +90,14 @@
 				B748FE031E9DD8DE003732AA /* AddBookmarkVC.swift */,
 			);
 			name = VC;
+			sourceTree = "<group>";
+		};
+		B748FE071E9DEB37003732AA /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				B748FE051E9DEB1B003732AA /* MyFileFunctions.swift */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 				B748FE041E9DD8DE003732AA /* AddBookmarkVC.swift in Sources */,
 				8467EC891DBD04EF006B921E /* Bookmark.swift in Sources */,
 				8467EC8B1DBD05C3006B921E /* BookmarkTableVC.swift in Sources */,
+				B748FE061E9DEB1B003732AA /* MyFileFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

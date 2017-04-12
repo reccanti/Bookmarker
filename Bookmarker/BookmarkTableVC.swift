@@ -24,9 +24,19 @@ class BookmarkTableVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
+        
+        // attempt to load files from the plist
+        let filename = "bookmarks.archive.plist"
+        let pathToFile = FileManager.filePathInDocumentsDirectory(fileName: filename)
+        if FileManager.default.fileExists(atPath: pathToFile.path) {
+            bookmarks = NSKeyedUnarchiver.unarchiveObject(withFile: pathToFile.path) as! [Bookmark]
+            print("opened file at path \(pathToFile.path).")
+        } else {
+            print ("could not find file at path \(pathToFile.path). Loading default data.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,6 +130,8 @@ class BookmarkTableVC: UITableViewController {
         if let addBookmarkVC = segue.source as? AddBookmarkVC {
             if let bookmark = addBookmarkVC.bookmark {
                 bookmarks.append(bookmark)
+                // save the updated bookmarks 
+                saveBookmarks(bookmarks, withName: "bookmarks.archive.plist")
                 tableView.reloadData()
             }
         }
@@ -128,5 +140,16 @@ class BookmarkTableVC: UITableViewController {
     @IBAction func unwindWithCancelTapped(segue:UIStoryboardSegue) {
         print("unwindWithCancelTapped")
         // do nothing
+    }
+    
+    // MARK: - helpers - 
+    /**
+     * Save the specified bookmarks to the documents directory with
+     * the given file name
+     */
+    func saveBookmarks (_ bookmarks: [Bookmark], withName: String) {
+        let pathToFile = FileManager.filePathInDocumentsDirectory(fileName: withName)
+        let success = NSKeyedArchiver.archiveRootObject(bookmarks, toFile: pathToFile.path)
+        print("Saved = \(success) to \(pathToFile)")
     }
 }
