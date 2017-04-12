@@ -22,7 +22,7 @@ class BookmarkTableVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,24 +58,28 @@ class BookmarkTableVC: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            // we need to remove it from the list first because the
+            // number of rows is tied directly to the size of the list
+            bookmarks.remove(at: indexPath.row)
+            
+            // update the tableView
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let bookmarkToMove = bookmarks.remove(at: fromIndexPath.row)
+        bookmarks.insert(bookmarkToMove, at: to.row)
 
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.
